@@ -19,7 +19,7 @@ public class Todo extends Auditable {
 
     @ManyToOne
     @JoinColumn(name = "userid")
-    @JsonIgnoreProperties(value = "todo", allowSetters = true)
+    @JsonIgnoreProperties(value = "todos", allowSetters = true)
     private User user;
 
     public Todo() {
