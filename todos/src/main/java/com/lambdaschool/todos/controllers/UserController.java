@@ -3,6 +3,7 @@ package com.lambdaschool.todos.controllers;
 import com.lambdaschool.todos.models.User;
 import com.lambdaschool.todos.services.UserService;
 import com.lambdaschool.todos.views.UserNameCountTodos;
+import com.lambdaschool.todos.views.UserTodoCount;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -116,10 +117,17 @@ public class UserController
      *
      * @return List of usernames, count of non completed tasks
      */
-    @GetMapping(value = "/users/todos", produces = {"application/json"})
-    public ResponseEntity<?> getUserNameCountTodos()
-    {
-        List<UserNameCountTodos> myList = userService.getCountUserTodos();
-        return new ResponseEntity<>(myList, HttpStatus.OK);
+//    @GetMapping(value = "/users/todos", produces = {"application/json"})
+//    public ResponseEntity<?> getUserNameCountTodos()
+//    {
+//        List<UserNameCountTodos> myList = userService.getCountUserTodos();
+//        return new ResponseEntity<>(myList, HttpStatus.OK);
+//    }
+
+    @GetMapping(value = "users/todos", produces = {"application/json"})
+    public ResponseEntity<?> getUserTodoCount() {
+        List<UserTodoCount> list = userService.getUserTodoCount();
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
+
 }

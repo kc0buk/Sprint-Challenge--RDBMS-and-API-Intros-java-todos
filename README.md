@@ -1833,7 +1833,8 @@ In your solution, it is essential that you follow best practices and produce cle
 
 ### Task 3: Stretch Goals
 
-- [ ] GET /users/users/todos - lists the number of todos each user has that are NOT completed. Use a custom query to accomplish this!
+- [x] GET /users/users/todos - lists the number of todos each user has that are NOT completed. Use a custom query to
+ accomplish this!
   - Users with 0 todos do NOT have to be included in the list
   - Order the list by username!
   
