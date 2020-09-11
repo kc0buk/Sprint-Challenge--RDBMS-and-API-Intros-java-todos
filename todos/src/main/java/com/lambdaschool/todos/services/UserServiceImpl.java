@@ -62,9 +62,14 @@ public class UserServiceImpl implements UserService
 
     @Transactional
     @Override
-    public User save(User user)
-    {
+    public User save(User user) {
         User newUser = new User();
+
+        if (user.getUserid() != 0) {
+            userrepos.findById(user.getUserid())
+                    .orElseThrow(() -> new EntityNotFoundException("User " + user.getUserid() + " was not found."));
+            newUser.setUserid(user.getUserid());
+        }
 
         newUser.setUsername(user.getUsername()
             .toLowerCase());
@@ -72,9 +77,11 @@ public class UserServiceImpl implements UserService
         newUser.setPrimaryemail(user.getPrimaryemail()
             .toLowerCase());
 
+
         newUser.getTodos().clear();
         for (Todo t : user.getTodos()) {
-            newUser.getTodos().add(new Todo(newUser, t.getDescription()));
+            Todo newTodo = new Todo(newUser,t.getDescription());
+            newUser.getTodos().add(newTodo);
         }
 
         return userrepos.save(newUser);
