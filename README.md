@@ -1760,6 +1760,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 - [x] Add your team lead as collaborator on Github
 - [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
 - [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Submit pull request (https://github.com/kc0buk/Sprint-Challenge--RDBMS-and-API-Intros-java-todos/pull/1)
 - [ ] Start with the provided todo application
 - [ ] Push commits: `git push origin <firstName-lastName>`
 - [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
